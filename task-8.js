@@ -8,32 +8,31 @@ If smaller, call the same function with starting index = middle+1 and repeat s
 
 function binsrch(arr, x, l, r) {
     if (l > r) return false;
-    let m=Math.floor((l + r)/2);
+    var m=Math.floor((l + r)/2);
     if (arr[m]===x) return true;
     if(arr[m] > x)
         return binsrch(arr, x, l, m-1);
     else
         return binsrch(arr, x, m+1, r);
 }
-let arr = [2,5,9,14,19,26];
-let x = 14;
+var arr = [2,5,9,14,19,26];
+var x = 14;
 if (binsrch(arr, x, 0, arr.length-1)) {console.log("True");}
 else console.log("False");
 
 /*2. Create a function that concatenates n input arrays, where n is variable.*/
 function concat(...arr)
 {
-  let ans = [];
-  for (let i = 0; i < arr.length; i++)
+  var ans = [];
+  for (var i = 0; i < arr.length; i++)
   {
-    for (let j = 0; j < arr[i].length; j++)
+    for (var j = 0; j < arr[i].length; j++)
     {
         ans.push(arr[i][j]);
     }
-    
-  }return ans;
+  }
+  return ans;
 }
-
 console.log(concat([1, 2, 3], [4, 5], [6, 7]));
 console.log(concat([1], [2], [3], [4], [5], [6], [7]));
 console.log(concat([1, 2], [3, 4]));
@@ -45,11 +44,11 @@ function oddishOrEvenish(num)
     while(num>0)
     {
         sum+=num%10;
-        num/=10;
+        num=Math.floor(num/10);
     }
     if(sum%2==0) {console.log("Evenish");}
     else {console.log("Oddish");}
 }
-oddishOrEvenish(43)
-oddishOrEvenish(373)
-oddishOrEvenish(4433)
+oddishOrEvenish(43);
+oddishOrEvenish(373);
+oddishOrEvenish(4433);
